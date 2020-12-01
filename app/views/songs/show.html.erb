@@ -1,0 +1,29 @@
+<h1><%= @song.title %></h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th><%= "Release Year" if @song.released? %></th>
+            <th>Artist</th>
+            <th>Genre</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @song.title %></td>
+            <td><%= @song.release_year if @song.released? %></td>
+            <td><%= @song.artist_name %></td>
+            <td><%= @song.genre %></td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+
+<%= link_to  "All Songs", songs_path %><br><br>
+
+<%= link_to  "Edit Song", edit_song_path(@song) %><br><br>
+
+<%= link_to  "Delete Song", delete_song_path(@song), method: :delete %><br><br>
+
